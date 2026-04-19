@@ -21,29 +21,26 @@ body {
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255,255,255,0.1);
 }
-
 .nav-link {
   color: #cbd5f5 !important;
   margin-left: 15px;
 }
-
 .nav-link:hover {
   color: #38bdf8 !important;
 }
 
 /* Hero */
-.hero p {
-  max-width: 600px;
-  margin: auto;
+.hero {
+  padding: 100px 20px 40px;
+  text-align: center;
 }
 .hero h1 {
   font-size: 3.5rem;
   font-weight: 700;
-  margin-bottom: 15px;
 }
-.hero {
-  padding: 100px 20px 40px;
-  text-align: center;
+.hero p {
+  max-width: 600px;
+  margin: auto;
 }
 .hero span {
   background: linear-gradient(90deg, #38bdf8, #6366f1);
@@ -52,26 +49,11 @@ body {
   color: transparent;
 }
 .hero img {
-  margin-top: 20px;
   width: 280px;
-  animation: float 3s ease-in-out infinite;
-}
-.hero {
-  position: relative;
+  margin-top: 40px;
+  border-radius: 20px;
 }
 
-.hero::after {
-  content: "";
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, rgba(56,189,248,0.2), transparent);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  filter: blur(80px);
-  z-index: -1;
-}
 /* Buttons */
 .btn-custom {
   background: linear-gradient(135deg, #38bdf8, #6366f1);
@@ -81,64 +63,34 @@ body {
   border-radius: 30px;
   transition: 0.3s;
 }
-
 .btn-custom:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(56,189,248,0.4);
+  transform: scale(1.05);
 }
 
-/* Section */
-section {
+/* Sections */
+.section {
   padding: 120px 0;
 }
 
-/* Premium Cards */
+/* Cards */
 .card-premium {
-  background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+  background: rgba(255,255,255,0.05);
   border-radius: 20px;
   padding: 25px;
   border: 1px solid rgba(255,255,255,0.08);
-  transition: 0.4s;
-  position: relative;
-  overflow: hidden;
+  text-align: center;
+  transition: 0.3s;
 }
-
-.card-premium::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(56,189,248,0.2), transparent 60%);
-  opacity: 0;
-  transition: 0.5s;
-}
-
-.card-premium:hover::before {
-  opacity: 1;
-}
-
 .card-premium:hover {
-  transform: translateY(-15px) scale(1.02);
+  transform: translateY(-10px) scale(1.03);
 }
 
-/* Case Study */
-.case-study {
-  background: linear-gradient(145deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
-  border-radius: 25px;
-  padding: 50px;
-  border: 1px solid rgba(255,255,255,0.08);
-}
-
-/* Typography */
-h2 {
-  font-weight: 700;
-}
-
-h5 {
-  color: #38bdf8;
-  margin-top: 20px;
+/* Skills */
+.skills-box {
+  background: rgba(255,255,255,0.05);
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
 }
 
 /* Footer */
@@ -146,52 +98,6 @@ footer {
   text-align: center;
   padding: 30px;
   color: #94a3b8;
-}
-
-.section {
-  padding: 120px 0; /* instead of 80–100 */
-}
-.skills-box {
-  background:rgba(255,255,255,0.05);
-  padding:25px;
-  border-radius:15px;
-}
-html {
-  scroll-behavior: smooth;
-}
-body {
-  padding-top: 80px;
-}
-section {
-  scroll-margin-top: 100px;
-}
-.card-premium::before {
-  pointer-events: none;
-}
-.card-premium {
-  position: relative;
-  z-index: 1;
-}
-.card-premium a {
-  position: relative;
-  z-index: 2;
-}
-.section {
-  padding: 120px 0;
-}
-.btn-custom:hover {
-  transform: scale(1.05);
-}
-
-#about {
-  margin-top: 60px;
-  border-top: 1px solid rgba(255,255,255,0.05);
-}
-
-@keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0); }
 }
 </style>
 </head>
@@ -204,7 +110,7 @@ section {
     <a class="navbar-brand text-white" href="#">Chaitanya</a>
     <div>
       <a class="nav-link d-inline" href="#home">Home</a>
-      <a class="nav-link d-inline" href="#about">About me</a>
+      <a class="nav-link d-inline" href="#about">About</a>
       <a class="nav-link d-inline" href="#projects">Projects</a>
       <a class="nav-link d-inline" href="#skills">Skills</a>
       <a class="nav-link d-inline" href="#resume">Resume</a>
@@ -214,106 +120,97 @@ section {
 </nav>
 
 <!-- Hero -->
-<section class="hero text-center">
+<section class="hero text-center" id="home">
+  <h1>Hi, I'm <span>Chaitanya</span></h1>
 
- <h1>Hi, I'm <span>Chaitanya</span></h1>
+  <p class="mt-3">
+    UI/UX Designer focused on simplifying complex user experiences and designing intuitive mobile applications.
+  </p>
 
-<p class="mt-3">
-UI/UX Designer focused on simplifying complex user experiences and designing intuitive mobile applications.
-</p>
+  <p style="color:#94a3b8;">Currently seeking UI/UX Internship / Entry-Level Roles</p>
 
-<p style="color:#94a3b8; margin-top:10px;">
-Currently seeking UI/UX Internship / Entry-Level Roles
-</p>
   <div class="mt-4">
     <a href="#projects" class="btn btn-custom me-3">View Projects</a>
     <a href="Chaitanya_UIUX_Designer_Resume.pdf" class="btn btn-outline-light">Resume</a>
   </div>
 
-  <img src="images/hero-ui.png"
-       style="width:300px; margin-top:40px; border-radius:20px;">
-
+  <img src="images/hero-ui.png">
 </section>
 
-<!--about me-->
+<!-- About -->
 <section id="about" class="section text-center">
-
-  <h2>About Me</h2>
-
-  <p style="max-width:600px; margin:auto;">
-    I'm an MCA student and aspiring UI/UX designer passionate about creating intuitive and user-friendly digital experiences. I enjoy solving real-world problems through design.
-  </p>
-
+  <div class="container">
+    <h2>About Me</h2>
+    <p>
+      I'm an MCA student and aspiring UI/UX designer passionate about creating intuitive and user-friendly digital experiences.
+    </p>
+  </div>
 </section>
 
 <!-- Projects -->
 <section id="projects" class="section">
-  <div class="col-md-5">
-  <div class="card-premium">
-    
-    <img src="images/music-preview.png" style="width:100%; border-radius:15px; margin-bottom:15px;">
-    
-    <h5>Music On App</h5>
-    <p>Redesigned music experience to reduce user effort and improve navigation</p>
-    
-    <a href="music-case-study.html" target="_blank" class="btn btn-custom">
-      View Case Study →
-    </a>
-    
-  </div>
-</div>
+  <div class="container">
+
+    <h2 class="text-center mb-5">Selected Work</h2>
+
+    <div class="row justify-content-center g-4">
 
       <div class="col-md-5">
-  <div class="card-premium">
-    
-    <img src="images/music-preview.png" style="width:100%; border-radius:15px; margin-bottom:15px;">
-    
-    <h5>Music On App</h5>
-    <p>Redesigned music experience to reduce user effort and improve navigation</p>
-    
-    <a href="music-case-study.html" target="_blank" class="btn btn-custom">
-      View Case Study →
-    </a>
-    
+        <div class="card-premium">
+          <img src="images/music-preview.png" class="img-fluid mb-3" style="border-radius:15px;">
+          <h5>Music On App</h5>
+          <p>Redesigned music experience to improve usability</p>
+          <a href="music-case-study.html" class="btn btn-custom">View Case Study</a>
+        </div>
+      </div>
+
+      <div class="col-md-5">
+        <div class="card-premium">
+          <img src="images/movie-preview.png" class="img-fluid mb-3" style="border-radius:15px;">
+          <h5>Movie Streaming App</h5>
+          <p>Improved content discovery with better UX</p>
+          <a href="movie-case-study.html" class="btn btn-custom">View Case Study</a>
+        </div>
+      </div>
+
+    </div>
   </div>
-</div>
-
 </section>
-
-<!-- Case Study -->
-
 
 <!-- Skills -->
 <section id="skills" class="section text-center">
-  <div class="skills-box">Figma (Wireframing, Prototyping)</div>
-  <div class="skills-box">User Research & UX Thinking</div>
-  <div class="skills-box">Usability Testing Basics</div>
-  <div class="skills-box">HTML, CSS, Bootstrap</div>
- n<div class="skills-box">Responsive Design</div>
+  <div class="container">
+
+    <h2 class="mb-5">Skills</h2>
+
+    <div class="row g-4 justify-content-center">
+
+      <div class="col-md-4"><div class="skills-box">Figma (Wireframing, Prototyping)</div></div>
+      <div class="col-md-4"><div class="skills-box">User Research & UX Thinking</div></div>
+      <div class="col-md-4"><div class="skills-box">Usability Testing Basics</div></div>
+      <div class="col-md-4"><div class="skills-box">HTML, CSS, Bootstrap</div></div>
+      <div class="col-md-4"><div class="skills-box">Responsive Design</div></div>
+
+    </div>
+
+  </div>
 </section>
 
 <!-- Resume -->
-<section class="section text-center" id="resume">
+<section id="resume" class="section text-center">
   <div class="container">
-    
+
     <h2>Resume</h2>
     <p>Download or preview my resume</p>
 
-    <!-- Download Button -->
-    <a href="Chaitanya_UIUX_Designer_Resume.pdf" download class="btn btn-custom mb-4">
+    <a href="Chaitanya_UIUX_Designer_Resume.pdf" class="btn btn-custom mb-4">
       Download Resume
     </a>
 
-    <!-- Resume Preview -->
-    <div style="margin-top:30px;">
-      <p style="color:#94a3b8;">Preview below ↓</p>
-      <iframe 
-        src="Chaitanya_UIUX_Designer_Resume.pdf" 
-        width="100%" 
-        height="500px"
-        style="border-radius:15px; border:1px solid rgba(255,255,255,0.1);">
-      </iframe>
-    </div>
+    <iframe src="Chaitanya_UIUX_Designer_Resume.pdf"
+            width="100%" height="500px"
+            style="border-radius:15px; border:1px solid rgba(255,255,255,0.1);">
+    </iframe>
 
   </div>
 </section>
@@ -321,22 +218,20 @@ Currently seeking UI/UX Internship / Entry-Level Roles
 <!-- Contact -->
 <section id="contact" class="section text-center">
   <div class="container">
-    <h2>🚀 Let's Work Together</h2>
 
-    <p>I am actively looking for UI/UX Internship or Entry-Level opportunities.</p>
-    <a href="mailto:ragachaitanya23@gmail.com" class="btn btn-custom">
-    Hire Me
+    <h2>🚀 Let's Work Together</h2>
+    <p>I am actively looking for UI/UX Designer roles</p>
+
+    <a href="mailto:ragachaitanya23@gmail.com" class="btn btn-custom mb-4">
+      Hire Me
     </a>
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:ragachaitanya23@gmail.com" style="text-decoration: none;">ragachaitanya23@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/chaitanya-nune-2043b430a" style="text-decoration: none;">chaitanya-nune</a></p>
-    <p>
-      GitHub: <a href="https://github.com/Chaitanya23nune">chaitanya23nune</a>
-    </p>
-    <p style="font-size: small; text-decoration:underline;">Get in Touch</p>
+
+    <p>Gmail:<a href="ragachaitanya23@gmail.com">ragachaitanya23@gmail.com</a></p>
+    <p>LinkedIn:<a href="www.linkedin.com/in/chaitanya-nune-2043b430a"> chaitanya-nune</a></p>
+    <p>GitHub:<a href="https://github.com/Chaitanya23nune"> chaitanya23nune</a></p>
+
   </div>
 </section>
-
 
 <footer>
   © 2026 Chaitanya | UI/UX Portfolio
